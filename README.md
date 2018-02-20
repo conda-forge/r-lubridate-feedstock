@@ -1,18 +1,13 @@
 About r-lubridate
 =================
 
-Home: https://CRAN.R-project.org/package=lubridate
+Home: https://github.com/tidyverse/lubridate
 
-Package license: GPL-2
+Package license: GPL (>= 2)
 
 Feedstock license: BSD 3-Clause
 
-Summary: Functions to work with date-times and time-spans: fast and user friendly parsing
-of date-time data, extraction and updating of components of a date-time (years,
-months, days, hours, minutes, and seconds), algebraic manipulation on date-time
-and time-span objects. The ''lubridate'' package has a consistent and memorable
-syntax that makes working with dates easy and fun.
-
+Summary: Functions to work with date-times and time-spans
 
 
 
@@ -71,6 +66,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
