@@ -29,7 +29,6 @@ requirements:
     - posix                # [win]
     - {{native}}toolchain  # [win]
     - gcc                  # [not win]
-
   run:
     - r-base
     - r-rcpp >=0.12.13
