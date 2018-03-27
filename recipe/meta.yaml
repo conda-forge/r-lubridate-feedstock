@@ -1,4 +1,4 @@
-{% set version = '1.7.2' %}
+{% set version = "1.7.3" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/lubridate_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
-  sha256: 5bb156b285765d5cf9d17aa02a7511adb0fbaf2add2ee6cf71fd95db833a814c
+  sha256: 2cffbf54afce1d068e65241fb876a77b10ee907d5a19d2ffa84d5ba8a2c3f3df
 
 build:
   number: 0
