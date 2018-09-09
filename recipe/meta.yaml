@@ -1,5 +1,4 @@
-{% set version = "1.7.4" %}
-
+{% set version = '1.7.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,8 +9,8 @@ package:
 source:
   fn: lubridate_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/lubridate_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/lubridate_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
   sha256: 510ca87bd91631c395655ee5029b291e948b33df09e56f6be5839f43e3104891
 
 build:
@@ -24,37 +23,48 @@ build:
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-rcpp >=0.12.13
     - r-stringr
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-rcpp >=0.12.13
     - r-stringr
 
 test:
   commands:
-    - $R -e "library('lubridate')"  # [not win]
+    - $R -e "library('lubridate')"           # [not win]
     - "\"%R%\" -e \"library('lubridate')\""  # [win]
 
 about:
-  home: https://github.com/tidyverse/lubridate
+  home: http://lubridate.tidyverse.org, https://github.com/tidyverse/lubridate
   license: GPL (>= 2)
-  summary: Functions to work with date-times and time-spans
+  summary: 'Functions to work with date-times and time-spans: fast and user friendly parsing
+    of date-time data, extraction and updating of components of a date-time (years,
+    months, days, hours, minutes, and seconds), algebraic manipulation on date-time
+    and time-span objects. The ''lubridate'' package has a consistent and memorable
+    syntax that makes working with dates easy and fun. Parts of the ''CCTZ'' source
+    code, released under the Apache 2.0 License, are included in this package. See <https://github.com/google/cctz>
+    for more details.'
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
   license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
