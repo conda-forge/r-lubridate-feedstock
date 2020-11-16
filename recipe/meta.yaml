@@ -1,4 +1,4 @@
-{% set version = "1.7.9" %}
+{% set version = "1.7.9.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lubridate_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
-  sha256: cbf95ee07323f3912a98f3cfdae04258d7ce1edb259787f284e2be3cddfed272
+  sha256: ee6a2d68faca51646477acd1898ba774bf2b6fd474a0abf351b16aa5e7a3db79
 
 build:
   merge_build_host: true  # [win]
