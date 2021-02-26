@@ -3,7 +3,7 @@ About r-lubridate
 
 Home: http://lubridate.tidyverse.org, https://github.com/tidyverse/lubridate
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-lubridate-feedstock/blob/master/LICENSE.txt)
 
