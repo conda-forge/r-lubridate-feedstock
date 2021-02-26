@@ -1,4 +1,4 @@
-{% set version = "1.7.9.2" %}
+{% set version = "1.7.10" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lubridate_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
-  sha256: ee6a2d68faca51646477acd1898ba774bf2b6fd474a0abf351b16aa5e7a3db79
+  sha256: 15121d213893255f1c8257a5a06acae7b3269b2378d56efd5cc95d9b4d1bc5e8
 
 build:
   merge_build_host: true  # [win]
@@ -47,7 +47,7 @@ test:
 
 about:
   home: http://lubridate.tidyverse.org, https://github.com/tidyverse/lubridate
-  license: GPL-2
+  license: GPL-2.0-or-later
   summary: "Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects. The 'lubridate' package has a consistent and memorable\
     \ syntax that makes working with dates easy and fun.  Parts of the 'CCTZ' source code, released under the Apache 2.0 License, are included in this package. See <https://github.com/google/cctz> for more details."
   license_family: GPL2
