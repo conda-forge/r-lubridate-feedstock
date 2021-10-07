@@ -30,14 +30,15 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-rcpp >=0.12.13
+    - r-cpp11 >=0.2.7
     - r-generics
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-rcpp >=0.12.13
+    - r-cpp11 >=0.2.7
     - r-generics
 
 test:
