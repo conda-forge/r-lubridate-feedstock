@@ -21,28 +21,25 @@ build:
 
 requirements:
   build:
-    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-cpp11                    # [build_platform != target_platform]
-    - r-generics                 # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-generics                   # [build_platform != target_platform]
+    - r-timechange                 # [build_platform != target_platform]
   host:
     - r-base
-    - r-cpp11 >=0.2.7
     - r-generics
+    - r-timechange >=0.1.1
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-cpp11 >=0.2.7
     - r-generics
+    - r-timechange >=0.1.1
 
 test:
   commands:
