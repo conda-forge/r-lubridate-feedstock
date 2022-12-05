@@ -1,4 +1,4 @@
-{% set version = "1.8.0" %}
+{% set version = "1.9.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,39 +10,36 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lubridate_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
-  sha256: 87d66efdb1f3d680db381d7e40a202d35645865a0542e2f270ef008a19002ba5
+  sha256: b936041f8a71894ef930cfff61b45833e0dd148b5b16697f4f541d25b31a903a
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-cpp11                    # [build_platform != target_platform]
-    - r-generics                 # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-generics                   # [build_platform != target_platform]
+    - r-timechange                 # [build_platform != target_platform]
   host:
     - r-base
-    - r-cpp11 >=0.2.7
     - r-generics
+    - r-timechange >=0.1.1
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-cpp11 >=0.2.7
     - r-generics
+    - r-timechange >=0.1.1
 
 test:
   commands:
