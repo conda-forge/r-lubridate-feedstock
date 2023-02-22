@@ -51,12 +51,11 @@ about:
   dev_url: https://github.com/tidyverse/lubridate
   doc_url: https://lubridate.tidyverse.org/reference/
   license: GPL-2.0-or-later
-  summary: Functions to work with date-times and time-spans: fast and
-    user friendly parsing of date-time data, extraction and updating of
-    components of a date-time (years, months, days, hours, minutes, and
-    seconds), algebraic manipulation on date-time and time-span objects.
-    The 'lubridate' package has a consistent and memorable syntax that
-    makes working with dates easy and fun.
+  summary: 'Functions to work with date-times and time-spans: fast and user friendly parsing
+    of date-time data, extraction and updating of components of a date-time (years,
+    months, days, hours, minutes, and seconds), algebraic manipulation on date-time
+    and time-span objects. The ''lubridate'' package has a consistent and memorable
+    syntax that makes working with dates easy and fun.'
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
