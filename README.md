@@ -1,13 +1,17 @@
 About r-lubridate
 =================
 
-Home: http://lubridate.tidyverse.org, https://github.com/tidyverse/lubridate
+Home: https://lubridate.tidyverse.org
 
 Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-lubridate-feedstock/blob/main/LICENSE.txt)
 
-Summary: Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects. The 'lubridate' package has a consistent and memorable syntax that makes working with dates easy and fun.  Parts of the 'CCTZ' source code, released under the Apache 2.0 License, are included in this package. See <https://github.com/google/cctz> for more details.
+Summary: Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects. The 'lubridate' package has a consistent and memorable syntax that makes working with dates easy and fun.
+
+Development: https://github.com/tidyverse/lubridate
+
+Documentation: https://lubridate.tidyverse.org/reference/
 
 Current build status
 ====================
