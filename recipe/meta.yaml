@@ -1,4 +1,4 @@
-{% set version = "1.9.2" %}
+{% set version = "1.9.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lubridate_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
-  sha256: 8976431a4affe989261cbaa5e09cd44bb42a3b16eed59a42c1698da34c6544a7
+  sha256: 2b6e1406d231b0a14d60b99cc406d159fea5465a5694725ad25343f12cf37fff
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -51,11 +51,8 @@ about:
   dev_url: https://github.com/tidyverse/lubridate
   doc_url: https://lubridate.tidyverse.org/reference/
   license: GPL-2.0-or-later
-  summary: 'Functions to work with date-times and time-spans: fast and user friendly parsing
-    of date-time data, extraction and updating of components of a date-time (years,
-    months, days, hours, minutes, and seconds), algebraic manipulation on date-time
-    and time-span objects. The ''lubridate'' package has a consistent and memorable
-    syntax that makes working with dates easy and fun.'
+  summary: 'Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects. The ''lubridate'' package has a consistent and
+    memorable syntax that makes working with dates easy and fun.'
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2

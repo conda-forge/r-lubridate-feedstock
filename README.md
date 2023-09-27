@@ -3,6 +3,7 @@ About r-lubridate-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-lubridate-feedstock/blob/main/LICENSE.txt)
 
+
 About r-lubridate
 -----------------
 
@@ -15,6 +16,7 @@ Summary: Functions to work with date-times and time-spans: fast and user friendl
 Development: https://github.com/tidyverse/lubridate
 
 Documentation: https://lubridate.tidyverse.org/reference/
+
 About r-lubridate
 -----------------
 
