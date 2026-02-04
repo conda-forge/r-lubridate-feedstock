@@ -9,7 +9,7 @@ About r-lubridate
 
 Home: https://lubridate.tidyverse.org
 
-Package license: GPL-2.0-or-later
+Package license: MIT
 
 Summary: Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects. The 'lubridate' package has a consistent and memorable syntax that makes working with dates easy and fun.
 
@@ -22,7 +22,7 @@ About r-lubridate
 
 Home: https://lubridate.tidyverse.org
 
-Package license: GPL-2.0-or-later
+Package license: MIT
 
 Summary: Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects. The 'lubridate' package has a consistent and memorable syntax that makes working with dates easy and fun.
 
