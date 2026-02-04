@@ -1,4 +1,4 @@
-{% set version = "1.9.4" %}
+{% set version = "1.9.5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lubridate_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lubridate/lubridate_{{ version }}.tar.gz
-  sha256: 864b7ee223d622d41214c6aacc7d68d8984090a8e1e823c729983d33624646c1
+  sha256: 0bc5d10e5a34285d4f9e9c572c058c386b9e1515d8faebc1496b2680138280a8
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -34,11 +38,11 @@ requirements:
   host:
     - r-base
     - r-generics
-    - r-timechange >=0.1.1
+    - r-timechange >=0.4.0
   run:
     - r-base
     - r-generics
-    - r-timechange >=0.1.1
+    - r-timechange >=0.4.0
 
 test:
   commands:
@@ -49,13 +53,12 @@ about:
   home: https://lubridate.tidyverse.org
   dev_url: https://github.com/tidyverse/lubridate
   doc_url: https://lubridate.tidyverse.org/reference/
-  license: GPL-2.0-or-later
+  license: MIT
   summary: 'Functions to work with date-times and time-spans: fast and user friendly parsing of date-time data, extraction and updating of components of a date-time (years, months, days, hours, minutes, and seconds), algebraic manipulation on date-time and time-span objects. The ''lubridate'' package has a consistent and
     memorable syntax that makes working with dates easy and fun.'
-  license_family: GPL2
+  license_family: MIT
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
 
 extra:
   recipe-maintainers:
